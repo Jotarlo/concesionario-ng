@@ -3,14 +3,14 @@
       <a routerLink="home" class="brand-logo">Inicio</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a routerLink="parameters/brand-list">Marca</a></li>
-        <li><a routerLink="parameters/category-list">Categoría</a></li>
-        <li><a routerLink="parameters/provider-list">Proveedor</a></li>
-        <li><a routerLink="parameters/vehicle-list">Vehículo</a></li>
-        <li><a routerLink="sales/sales-list">Ventas</a></li>
-        <li><a routerLink="reports/reports-list">Reportes</a></li>
-        <li><a routerLink="security/login">Login</a></li>
-        <li><a routerLink="security/logout">Logout</a></li>
+        <li *ngIf="activeSession"><a routerLink="parameters/brand-list">Marca</a></li>
+        <li *ngIf="activeSession"><a routerLink="parameters/category-list">Categoría</a></li>
+        <li *ngIf="activeSession"><a routerLink="parameters/provider-list">Proveedor</a></li>
+        <li *ngIf="activeSession"><a routerLink="parameters/vehicle-list">Vehículo</a></li>
+        <li *ngIf="activeSession"><a routerLink="sales/sales-list">Ventas</a></li>
+        <li *ngIf="activeSession"><a routerLink="reports/reports-list">Reportes</a></li>
+        <li *ngIf="!activeSession"><a routerLink="security/login">Login</a></li>
+        <li *ngIf="activeSession"><a routerLink="security/logout">Logout</a></li>
       </ul>
     </div>
   </nav>
