@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SessionDataModel } from 'src/app/models/session-data.model';
+import { SessionDataModel } from 'src/app/models/security/session-data.model';
 import { LocalStorageService } from 'src/app/services/shared/local-storage.service';
 import { SecurityService } from 'src/app/services/shared/security.service';
 

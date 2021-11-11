@@ -1,1 +1,23 @@
-<p>remove-category works!</p>
+<div class="row">
+    <div class="row">
+        <div class="input-field col s12">
+
+            <strong>¿Está seguro(a) de eliminar el registro con la siguiente información?</strong>
+            <br />
+            <ul>
+                <li>
+                    Id: {{id}}
+                </li>
+                <li>
+                    Marca: {{name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <button type="button" class="btn btn-success" (click)="RemoveRecord()">Confirmar</button>
+            &nbsp;<a class="btn btn-warning orange" routerLink="/parameters/brand-list">Cancelar</a>
+        </div>
+    </div>
+</div>

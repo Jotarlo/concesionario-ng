@@ -18,6 +18,7 @@ import { VehicleCreationComponent } from './vehicle/vehicle-creation/vehicle-cre
 import { VehicleEditionComponent } from './vehicle/vehicle-edition/vehicle-edition.component';
 import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.component';
 import { RemoveVehicleComponent } from './vehicle/remove-vehicle/remove-vehicle.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,7 +42,9 @@ import { RemoveVehicleComponent } from './vehicle/remove-vehicle/remove-vehicle.
   ],
   imports: [
     CommonModule,
-    ParametersRoutingModule
+    ParametersRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ParametersModule { }

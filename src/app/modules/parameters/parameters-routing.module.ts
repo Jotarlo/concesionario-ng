@@ -23,7 +23,7 @@ const routes: Routes = [
     component: BrandCreationComponent
   },
   {
-    path: "brand-edition",
+    path: "brand-edition/:id",
     component: BrandEditionComponent
   },
   {
@@ -31,7 +31,7 @@ const routes: Routes = [
     component: BrandListComponent
   },
   {
-    path: "remove-brand",
+    path: "remove-brand/:id",
     component: RemoveBrandComponent
   },
   {
@@ -39,7 +39,7 @@ const routes: Routes = [
     component: CategoryCreationComponent
   },
   {
-    path: "category-edition",
+    path: "category-edition/:id",
     component: CategoryEditionComponent
   },
   {
@@ -47,7 +47,7 @@ const routes: Routes = [
     component: CategoryListComponent
   },
   {
-    path: "remove-category",
+    path: "remove-category/:id",
     component: RemoveCategoryComponent
   },
   {

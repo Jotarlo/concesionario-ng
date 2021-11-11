@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
-import { UserCredentialsModel } from 'src/app/models/user-credentials.model';
+import { UserCredentialsModel } from 'src/app/models/security/user-credentials.model';
 import { SecurityService } from 'src/app/services/shared/security.service';
 import { MD5 } from 'crypto-js';
-import { SessionDataModel } from 'src/app/models/session-data.model';
+import { SessionDataModel } from 'src/app/models/security/session-data.model';
 import { LocalStorageService } from 'src/app/services/shared/local-storage.service';
 import { Router } from '@angular/router';
 

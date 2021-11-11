@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { SessionDataModel } from 'src/app/models/session-data.model';
+import { SessionDataModel } from 'src/app/models/security/session-data.model';
 import { ConfigurationData } from '../../config/ConfigurationData';
-import { UserCredentialsModel } from '../../models/user-credentials.model';
+import { UserCredentialsModel } from '../../models/security/user-credentials.model';
 import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class SecurityService {
 
   constructor(private http: HttpClient,
     private localStorageService: LocalStorageService) {
-
+      this.VerifyActiveSession();
   }
 
   VerifyActiveSession(): boolean {

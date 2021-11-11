@@ -4,4 +4,10 @@ export namespace ConfigurationData{
     export const INVALID_FORM_MESSAGE = "Formulario inválido por favor verifique."
     export const VALID_FORM_MESSAGE = "OK."
     export const SECURITY_MS_URL = "http://localhost:3003";
+    export const BUSSINESS_MS_URL = "http://localhost:3000";
+    export const SAVED_MESSAGE = "Registro almacenado."
+    export const UPDATED_MESSAGE = "Registro actualizado."
+    export const REMOVED_MESSAGE = "Registro eliminado."
+    
+    export const ERROR_MESSAGE = "Error en el backend."
 }
