@@ -8,6 +8,6 @@ export namespace ConfigurationData{
     export const SAVED_MESSAGE = "Registro almacenado."
     export const UPDATED_MESSAGE = "Registro actualizado."
     export const REMOVED_MESSAGE = "Registro eliminado."
-    export const PAGE_SIZE_PAGINATION = 3;
+    export const PAGE_SIZE_PAGINATION = 2;
     export const ERROR_MESSAGE = "Error en el backend."
 }

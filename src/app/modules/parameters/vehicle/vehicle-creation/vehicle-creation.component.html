@@ -1,1 +1,83 @@
-<p>vehicle-creation works!</p>
+
+<div class="row">
+    <form [formGroup]="mainPhotoForm" class="col s12">
+        <div class="row">
+            <div class="col s12 center-align">
+                <img *ngIf="!uploadedPhoto" src="assets/images/vehicle/default_vehicle_photo.jpg" class="vehiclePhoto center-align">
+                <img *ngIf="uploadedPhoto" src="{{url_server}}/archivo/1/{{uploadedFilename}}" class="vehiclePhoto center-align">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <input class="btn orange" type="file" (change)="UploadPhoto($event)" name="image"  /> 
+                &nbsp;<button class="btn btn-success " type="button" (click)="SubmitFileToServer()" > Cargar Foto</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <form [formGroup]="dataForm" class="col s12">
+        <input type="hidden" formControlName="foto_principal" />
+        <div class="row">
+            <div class="input-field col s3">
+                <input formControlName="chasis_number" id="txtChasis" type="text">
+                <label for="txtChasis">Chasis</label>
+            </div>
+            <div class="input-field col s3">
+                <input formControlName="engine_number" id="txtMotor" type="text">
+                <label for="txtMotor">Motor</label>
+            </div>
+            <div class="input-field col s3">
+                <input formControlName="color" id="txtColor" type="text">
+                <label for="txtColor">Color</label>
+            </div>
+            <div class="input-field col s3">
+                <input formControlName="year" id="txtModelo" type="number">
+                <label for="txtModelo">Modelo</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input formControlName="price" id="txtPrecio" type="text">
+                <label for="txtPrecio">Precio</label>
+            </div>
+            <div class="input-field col s3">
+                <input formControlName="discount" id="txtDescuento" type="text">
+                <label for="txtDescuento">Descuento</label>
+            </div>
+            <div class="input-field col s3">
+                <select formControlName="status">
+                    <option value="1" selected>Disponible</option>
+                    <option value="0">NO Disponible</option>
+                </select>
+                <label>Estado</label>
+            </div>
+            <div class="input-field col s3">
+                <select id="selBrand">
+                    <option *ngFor="let b of brandList" value="{{b.id}}">{{b.nombre}}</option>
+                </select>
+                <label>Marca</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <select id="selCategories" multiple formControlName="categories">
+                    <option *ngFor="let c of categoryList" value="{{c.id}}">{{c.nombre}}</option>
+                </select>
+                <label>Categorías</label>
+            </div>
+            <div class="input-field col s6">
+                <select id="selProvider">
+                    <option *ngFor="let p of providerList" value="{{p.id}}">{{p.razon_social}}</option>
+                </select>
+                <label>Proveedor</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+                &nbsp;<a class="btn btn-warning orange" routerLink="/parameters/vehicle-list">Cancelar</a>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,1 +1,73 @@
-<p>vehicle-list works!</p>
+<br />
+<a routerLink="/parameters/vehicle-creation" class="btn btn-success">Agregar Registro</a>
+
+<fieldset>
+    <legend>Listado de Registros</legend>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Chasis
+                </th>
+                <th>
+                    Motor
+                </th>
+                <th>
+                    Color
+                </th>
+                <th>
+                    Modelo
+                </th>
+                <th>
+                    Marca
+                </th>
+                <th>
+                    Categorías
+                </th>
+                <th>
+                    Acciones
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of recordList  | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalAmount }">
+                <td>
+                    {{r.id}}
+                </td>
+                <td>
+                    {{r.serie_chasis}}
+                </td>
+                <td>
+                    {{r.serie_motor}}
+                </td>
+                <td>
+                    {{r.color}}
+                </td>
+                <td>
+                    {{r.modelo}}
+                </td>
+                <td>
+                    {{r.marca?.nombre}}
+                </td>
+                <td>
+                    <ul>
+                        <li *ngFor="let c of r.categorias">{{c.nombre}}</li>
+                    </ul>
+                </td>
+                <td>
+                    <a routerLink="/parameters/vehicle-edition/{{r.id}}" class="btn btn-warning orange">Editar</a>&nbsp;
+                    <a routerLink="/parameters/remove-vehicle/{{r.id}}" class="btn btn-warning red">Eliminar</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+                    nextLabel="Siguiente"></pagination-controls>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>
