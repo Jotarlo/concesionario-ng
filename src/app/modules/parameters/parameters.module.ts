@@ -19,6 +19,7 @@ import { VehicleEditionComponent } from './vehicle/vehicle-edition/vehicle-editi
 import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.component';
 import { RemoveVehicleComponent } from './vehicle/remove-vehicle/remove-vehicle.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ParametersRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class ParametersModule { }

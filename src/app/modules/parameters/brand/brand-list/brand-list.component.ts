@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { BrandModel } from 'src/app/models/parameters/brand.model';
 import { BrandService } from 'src/app/services/parameters/brand.service';
 
@@ -8,7 +9,9 @@ import { BrandService } from 'src/app/services/parameters/brand.service';
   styleUrls: ['./brand-list.component.css']
 })
 export class BrandListComponent implements OnInit {
-
+  p: number = 1;
+  pageSize: number = ConfigurationData.PAGE_SIZE_PAGINATION;
+  totalAmount: number = 0;
   recordList: BrandModel[] = [];
 
   constructor(
@@ -23,6 +26,7 @@ export class BrandListComponent implements OnInit {
     this.service.GetRecordList().subscribe({
       next: (data: BrandModel[]) => {
         this.recordList = data;
+        this.totalAmount = this.recordList.length;
       }
     });
   }
