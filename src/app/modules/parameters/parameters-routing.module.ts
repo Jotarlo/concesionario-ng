@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticatedGuard } from 'src/app/guards/authenticated.guard';
 import { BrandCreationComponent } from './brand/brand-creation/brand-creation.component';
 import { BrandEditionComponent } from './brand/brand-edition/brand-edition.component';
 import { BrandListComponent } from './brand/brand-list/brand-list.component';
@@ -20,67 +21,83 @@ import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.compon
 const routes: Routes = [
   {
     path: "brand-creation",
-    component: BrandCreationComponent
+    component: BrandCreationComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "brand-edition/:id",
-    component: BrandEditionComponent
+    component: BrandEditionComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "brand-list",
-    component: BrandListComponent
+    component: BrandListComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "remove-brand/:id",
-    component: RemoveBrandComponent
+    component: RemoveBrandComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "category-creation",
-    component: CategoryCreationComponent
+    component: CategoryCreationComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "category-edition/:id",
-    component: CategoryEditionComponent
+    component: CategoryEditionComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "category-list",
-    component: CategoryListComponent
+    component: CategoryListComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "remove-category/:id",
-    component: RemoveCategoryComponent
+    component: RemoveCategoryComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "provider-creation",
-    component: ProviderCreationComponent
+    component: ProviderCreationComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "provider-edition",
-    component: ProviderEditionComponent
+    component: ProviderEditionComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "provider-list",
-    component: ProviderListComponent
+    component: ProviderListComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "remove-provider",
-    component: RemoveProviderComponent
+    component: RemoveProviderComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "vehicle-creation",
-    component: VehicleCreationComponent
+    component: VehicleCreationComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "vehicle-edition",
-    component: VehicleEditionComponent
+    component: VehicleEditionComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "vehicle-list",
-    component: VehicleListComponent
+    component: VehicleListComponent,
+    canActivate: [AuthenticatedGuard]
   },
   {
     path: "remove-vehicle",
-    component: RemoveVehicleComponent
+    component: RemoveVehicleComponent,
+    canActivate: [AuthenticatedGuard]
   }
 ];
 

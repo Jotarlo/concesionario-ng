@@ -47,10 +47,14 @@ export class LoginComponent implements OnInit {
       this.securityService.Login(credentials).subscribe({
         next: (data: SessionDataModel) => {
           console.log(data);
-          let saved = this.localStorageService.SaveSessionData(data);
-          data.isLoggedIn = true;
-          this.securityService.RefreshSessionInfo(data);
-          this.router.navigate(["/home"]);
+          if (data.tk != "" && data.usuario != null) {
+            let saved = this.localStorageService.SaveSessionData(data);
+            data.isLoggedIn = true;
+            this.securityService.RefreshSessionInfo(data);
+            this.router.navigate(["/home"]);
+          }else{
+            ShowGeneralMessage(ConfigurationData.LOGIN_DATA_INVALID);
+          }
         },
         error: (error: any) => {
 

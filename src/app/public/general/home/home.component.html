@@ -1,1 +1,22 @@
-<h1>Bienvenido(a) al Sistema</h1>
+<div class="row">
+    <div class="col s4" *ngFor="let v of vehicleList">
+        <div class="card">
+            <div class="card-image">
+                <img class="mainPhoto" *ngIf="v.foto_principal ==''" src="/assets/images/vehicle/default_vehicle_photo.jpg">
+                <img class="mainPhoto" *ngIf="v.foto_principal !=''" src="{{url}}/archivo/1/{{v.foto_principal}}">
+                <span class="card-title">{{v.modelo}}</span>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li><label>Precio: {{v.precio | currency}}</label></li>
+                    <li><label>Marca: {{v.marca?.nombre}}</label></li>
+                    <li><label>Color: {{v.color}}</label></li>
+                    <li><label>Descuento: {{v.descuento}}</label></li>
+                </ul>
+            </div>
+            <div class="card-action">
+                <a routerLink="">Ver más...</a>
+            </div>
+        </div>
+    </div>
+</div>
