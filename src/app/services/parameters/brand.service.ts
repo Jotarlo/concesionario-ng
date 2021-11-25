@@ -28,11 +28,6 @@ export class BrandService {
     return this.http.post<BrandModel>(`${this.url}/marcas`,
       {
         nombre: data.nombre
-      },
-      {
-        headers: new HttpHeaders({
-          Authorization: `Bearer ${this.tk}`
-        })
       });
   }
 
@@ -40,22 +35,12 @@ export class BrandService {
     return this.http.put<BrandModel>(`${this.url}/marcas/${data.id}`,
       {
         nombre: data.nombre
-      },
-      {
-        headers: new HttpHeaders({
-          Authorization: `Bearer ${this.tk}`
-        })
       });
   }
   
 
   RemoveRecord(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/marcas/${id}`,
-    {
-      headers: new HttpHeaders({
-        Authorization: `Bearer ${this.tk}`
-      })
-    });
+    return this.http.delete<any>(`${this.url}/marcas/${id}`);
   }
 
 }

@@ -9,8 +9,9 @@ import { FooterComponent } from './public/template/footer/footer.component';
 import { NotFoundComponent } from './public/error/not-found/not-found.component';
 import { InternalServerErrorComponent } from './public/error/internal-server-error/internal-server-error.component';
 import { HomeComponent } from './public/general/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AddTokenInterceptor } from './interceptors/add-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AddTokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
